@@ -657,4 +657,12 @@ class StudioRepository(
     suspend fun setThemeMode(mode: ThemeMode) = preferencesRepository.setThemeMode(mode)
     suspend fun setDynamicColor(enabled: Boolean) = preferencesRepository.setDynamicColor(enabled)
     suspend fun setDefaultModelId(modelId: String) = preferencesRepository.setDefaultModelId(modelId)
+    suspend fun setUseSignedInAccountForWeb(enabled: Boolean) =
+        preferencesRepository.setUseSignedInAccountForWeb(enabled)
+    suspend fun setDesktopModeWebView(enabled: Boolean) =
+        preferencesRepository.setDesktopModeWebView(enabled)
+    suspend fun addWebBookmark(title: String, url: String) =
+        preferencesRepository.addWebBookmark(title, url)
+    suspend fun deleteWebBookmark(bookmarkId: String) =
+        preferencesRepository.deleteWebBookmark(bookmarkId)
 }

@@ -14,10 +14,38 @@
     <string name="auth_account_dialog_title">حساب کاربری گوگل</string>
 
     <!-- Navigation -->
+    <string name="nav_ai_studio">AI Studio</string>
     <string name="nav_projects">پروژه‌ها</string>
     <string name="nav_workbench">استودیو</string>
     <string name="nav_export">خروجی APK</string>
     <string name="nav_settings">تنظیمات</string>
+
+    <!-- AI Studio Web Hub -->
+    <string name="web_hub_title">Google AI Studio</string>
+    <string name="web_hub_subtitle">مدیریت مستقیم حساب و پروژه‌های aistudio.google.com بهینه‌شده برای اندروید</string>
+    <string name="web_mode_fast">حالت ایمن (Chrome Tab)</string>
+    <string name="web_mode_embedded">نمای یکپارچه (مرورگر)</string>
+    <string name="web_hero_cta">باز کردن پروژه‌های aistudio.google.com</string>
+    <string name="web_hero_desc">با نشست رسمی مرورگر کروم گوشی شما باز می‌شود تا بدون خطای ورود گوگل، تمام پروژه‌ها، اپ‌های Build و کلیدهای API خود را مدیریت کنید.</string>
+    <string name="web_sections_title">بخش‌های رسمی aistudio.google.com</string>
+    <string name="web_bookmarks_title">میانبر پروژه‌های سنجاق‌شده شما</string>
+    <string name="web_bookmarks_add">افزودن لینک پروژه</string>
+    <string name="web_bookmarks_empty">لینک هر پروژه یا اپ در aistudio.google.com را اینجا ذخیره کنید تا با یک لمس مستقیم باز شود.</string>
+    <string name="web_account_binding_title">انتخاب خودکار ایمیل حساب فعلی (?authuser)</string>
+    <string name="web_account_binding_desc">هنگام باز کردن aistudio.google.com به‌صورت خودکار حساب ورودشده فعلی انتخاب می‌شود.</string>
+    <string name="web_auth_guard_title">ورود به حساب گوگل در حالت ایمن</string>
+    <string name="web_auth_guard_body">گوگل به‌دلیل سیاست امنیتی، ورود به حساب داخل WebView را مسدود می‌کند. برای ورود و مشاهده کامل پروژه‌ها، همین صفحه را با یک لمس در Chrome Custom Tab باز کنید.</string>
+    <string name="web_auth_guard_action">باز کردن امن در Chrome Tab</string>
+    <string name="web_bookmark_dialog_title">ذخیره میانبر پروژه AI Studio</string>
+    <string name="web_bookmark_title_label">نام پروژه</string>
+    <string name="web_bookmark_url_label">آدرس صفحه در aistudio.google.com</string>
+    <string name="web_bookmark_save">ذخیره میانبر</string>
+    <string name="cd_web_back">صفحه قبل</string>
+    <string name="cd_web_forward">صفحه بعد</string>
+    <string name="cd_web_reload">بارگذاری مجدد</string>
+    <string name="cd_web_desktop">حالت دسکتاپ</string>
+    <string name="cd_web_open_tab">باز کردن در Chrome Tab</string>
+    <string name="cd_web_delete_bookmark">حذف میانبر</string>
 
     <!-- Projects Screen -->
     <string name="projects_search_hint">جستجو در پروژه‌های ابری و پرامپت‌ها…</string>

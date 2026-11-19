@@ -19,10 +19,12 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Android
 import androidx.compose.material.icons.filled.AutoAwesome
 import androidx.compose.material.icons.filled.Folder
+import androidx.compose.material.icons.filled.Language
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material.icons.outlined.Android
 import androidx.compose.material.icons.outlined.AutoAwesome
 import androidx.compose.material.icons.outlined.Folder
+import androidx.compose.material.icons.outlined.Language
 import androidx.compose.material.icons.outlined.Settings
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -70,6 +72,7 @@ import com.example.data.model.StudioDestination
 import com.example.data.model.ThemeMode
 import com.example.data.repository.StudioRepository
 import com.example.ui.components.GoogleAccountDialog
+import com.example.ui.screens.AiStudioWebScreen
 import com.example.ui.screens.AuthScreen
 import com.example.ui.screens.ExportApkScreen
 import com.example.ui.screens.ProjectsScreen
@@ -105,6 +108,12 @@ private data class NavDestinationSpec(
 )
 
 private val studioNavItems = listOf(
+    NavDestinationSpec(
+        destination = StudioDestination.AI_STUDIO,
+        labelRes = R.string.nav_ai_studio,
+        selectedIcon = Icons.Filled.Language,
+        unselectedIcon = Icons.Outlined.Language
+    ),
     NavDestinationSpec(
         destination = StudioDestination.PROJECTS,
         labelRes = R.string.nav_projects,
@@ -157,7 +166,10 @@ private fun PromptStudioAppRoot() {
             } else {
                 // Key composition & ViewModel by UID so sign-out or account switching tears down listeners cleanly.
                 key(user.uid) {
-                    AuthenticatedStudioShell(currentUser = user)
+                    AuthenticatedStudioShell(
+                        currentUser = user,
+                        darkTheme = darkTheme
+                    )
                 }
             }
         }
@@ -165,7 +177,10 @@ private fun PromptStudioAppRoot() {
 }
 
 @Composable
-private fun AuthenticatedStudioShell(currentUser: FirebaseUser) {
+private fun AuthenticatedStudioShell(
+    currentUser: FirebaseUser,
+    darkTheme: Boolean
+) {
     val context = LocalContext.current
     val scope = rememberCoroutineScope()
     val credentialManager = remember(context) { CredentialManager.create(context) }
@@ -308,6 +323,21 @@ private fun AuthenticatedStudioShell(currentUser: FirebaseUser) {
                         .widthIn(max = 840.dp)
 
                     when (destination) {
+                        StudioDestination.AI_STUDIO -> {
+                            AiStudioWebScreen(
+                                currentUser = currentUser,
+                                preferences = preferences,
+                                darkTheme = darkTheme,
+                                onOpenAccountDialog = { showAccountDialog = true },
+                                onToggleAccountBinding = viewModel::setUseSignedInAccountForWeb,
+                                onToggleDesktopMode = viewModel::setDesktopModeWebView,
+                                onAddBookmark = viewModel::addWebBookmark,
+                                onDeleteBookmark = viewModel::deleteWebBookmark,
+                                onNotify = viewModel::notifyMessage,
+                                modifier = contentModifier
+                            )
+                        }
+
                         StudioDestination.PROJECTS -> {
                             ProjectsScreen(
                                 currentUser = currentUser,

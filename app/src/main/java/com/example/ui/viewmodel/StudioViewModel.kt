@@ -65,7 +65,7 @@ class StudioViewModel(
     private val currentUserId: String
 ) : ViewModel() {
 
-    private val _currentDestination = MutableStateFlow(StudioDestination.PROJECTS)
+    private val _currentDestination = MutableStateFlow(StudioDestination.AI_STUDIO)
     val currentDestination: StateFlow<StudioDestination> = _currentDestination.asStateFlow()
 
     private val _searchQuery = MutableStateFlow("")
@@ -587,6 +587,28 @@ class StudioViewModel(
 
     fun setDefaultModelId(modelId: String) {
         viewModelScope.launch { repository.setDefaultModelId(modelId) }
+    }
+
+    fun setUseSignedInAccountForWeb(enabled: Boolean) {
+        viewModelScope.launch { repository.setUseSignedInAccountForWeb(enabled) }
+    }
+
+    fun setDesktopModeWebView(enabled: Boolean) {
+        viewModelScope.launch { repository.setDesktopModeWebView(enabled) }
+    }
+
+    fun addWebBookmark(title: String, url: String) {
+        viewModelScope.launch {
+            repository.addWebBookmark(title, url)
+            _events.emit(StudioUiEvent.ShowMessage("میانبر پروژه ذخیره شد."))
+        }
+    }
+
+    fun deleteWebBookmark(bookmarkId: String) {
+        viewModelScope.launch {
+            repository.deleteWebBookmark(bookmarkId)
+            _events.emit(StudioUiEvent.ShowMessage("میانبر حذف شد."))
+        }
     }
 
     fun notifyMessage(text: String) {

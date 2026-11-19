@@ -1,6 +1,7 @@
 package com.example.data.model
 
 enum class StudioDestination(val route: String) {
+    AI_STUDIO("ai_studio"),
     PROJECTS("projects"),
     WORKBENCH("workbench"),
     EXPORT("export"),
