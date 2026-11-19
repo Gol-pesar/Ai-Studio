@@ -1,0 +1,108 @@
+<resources>
+    <string name="app_name">Prompt Studio</string>
+
+    <!-- Google Sign-In Gate -->
+    <string name="auth_title">Prompt Studio</string>
+    <string name="auth_subtitle">کلاینت بومی اندروید برای کار مستقیم با مدل‌های رسمی Gemini و همگام‌سازی ابری پروژه‌ها</string>
+    <string name="auth_sign_in_google">ورود با حساب گوگل</string>
+    <string name="auth_signing_in">در حال اتصال به حساب گوگل…</string>
+    <string name="auth_feature_live_ai">اتصال مستقیم و زنده به مدل‌های رسمی Gemini 3.8 و Gemini 4</string>
+    <string name="auth_feature_cloud">ذخیره‌سازی و همگام‌سازی آنی پروژه‌ها در Cloud Firestore</string>
+    <string name="auth_feature_apk">خروجی پروژه بومی کاتلین و استخراج مستقیم فایل APK</string>
+    <string name="auth_privacy_note">پروژه‌ها و گفتگوهای شما به صورت اختصاصی و رمزنگاری‌شده در فضای حساب گوگل شما ذخیره می‌شوند.</string>
+    <string name="auth_sign_out">خروج از حساب گوگل</string>
+    <string name="auth_account_dialog_title">حساب کاربری گوگل</string>
+
+    <!-- Navigation -->
+    <string name="nav_projects">پروژه‌ها</string>
+    <string name="nav_workbench">استودیو</string>
+    <string name="nav_export">خروجی APK</string>
+    <string name="nav_settings">تنظیمات</string>
+
+    <!-- Projects Screen -->
+    <string name="projects_search_hint">جستجو در پروژه‌های ابری و پرامپت‌ها…</string>
+    <string name="projects_new_project">پرامپت جدید</string>
+    <string name="projects_templates_title">شروع سریع با قالب‌های استودیو</string>
+    <string name="projects_list_title">پروژه‌های ابری شما</string>
+    <string name="projects_empty_title">فضای ابری شما آماده است</string>
+    <string name="projects_empty_subtitle">اولین پروژه پرامپت خود را بسازید یا یکی از قالب‌های آماده بالا را انتخاب کنید تا بلافاصله با Gemini کار کنید.</string>
+    <string name="projects_create_dialog_title">ایجاد پروژه جدید</string>
+    <string name="projects_field_title">عنوان پروژه</string>
+    <string name="projects_field_desc">توضیحات کوتاه</string>
+    <string name="projects_field_system">دستور سیستمی (System Instruction)</string>
+    <string name="projects_action_create">ساخت و باز کردن</string>
+    <string name="projects_action_cancel">انصراف</string>
+    <string name="projects_action_duplicate">کپی پروژه</string>
+    <string name="projects_action_delete">حذف پروژه</string>
+    <string name="projects_action_pin">سنجاق کردن</string>
+
+    <!-- Workbench Screen -->
+    <string name="workbench_system_instruction">دستور سیستمی (System Instructions)</string>
+    <string name="workbench_system_hint">نقش مدل، لحن پاسخ، محدودیت‌ها یا ساختار خروجی را تعریف کنید…</string>
+    <string name="workbench_prompt_hint">از Gemini بپرسید یا تصویر پیوست کنید…</string>
+    <string name="workbench_clear_chat">پاک‌سازی گفتگو</string>
+    <string name="workbench_copy">کپی</string>
+    <string name="workbench_copied">در حافظه کپی شد</string>
+    <string name="workbench_regenerate">تولید مجدد</string>
+    <string name="workbench_empty_title">آماده گفتگو با Gemini</string>
+    <string name="workbench_empty_subtitle">دستور سیستمی و پارامترهای مدل را تنظیم کنید و اولین پرامپت را به صورت زنده اجرا نمایید.</string>
+    <string name="workbench_no_project">ابتدا یک پروژه بسازید یا از بخش پروژه‌ها انتخاب کنید.</string>
+    <string name="workbench_go_projects">مشاهده پروژه‌ها</string>
+
+    <!-- Model Tuning Sheet -->
+    <string name="tuning_sheet_title">تنظیمات اجرا (Run Settings)</string>
+    <string name="tuning_model_label">انتخاب مدل رسمی Gemini</string>
+    <string name="tuning_temperature">دما (Temperature)</string>
+    <string name="tuning_top_p">Top-P</string>
+    <string name="tuning_top_k">Top-K</string>
+    <string name="tuning_max_tokens">حداکثر توکن خروجی</string>
+    <string name="tuning_json_mode">خروجی ساختاری JSON</string>
+    <string name="tuning_json_schema_label">اسکیمای JSON (responseSchema)</string>
+    <string name="tuning_safety_balanced">فیلتر ایمنی استاندارد گوگل</string>
+    <string name="tuning_save">ذخیره و اعمال</string>
+
+    <!-- Export & APK Screen -->
+    <string name="export_title">خروجی پروژه و فایل APK</string>
+    <string name="export_subtitle">استخراج مستقیم فایل APK برنامه و بسته‌بندی پروژه پرامپت به کد بومی کاتلین آماده بیلد</string>
+    <string name="export_select_project">پروژه انتخاب‌شده</string>
+    <string name="export_app_name_label">نام اپلیکیشن خروجی</string>
+    <string name="export_package_label">شناسه بسته (Application ID)</string>
+    <string name="export_version_name_label">نسخه (Version Name)</string>
+    <string name="export_version_code_label">کد نسخه</string>
+    <string name="export_save_zip">ذخیره پروژه آماده بیلد APK (.zip)</string>
+    <string name="export_share_zip">اشتراک‌گذاری بسته پروژه</string>
+    <string name="export_extract_apk_title">خروجی مستقیم فایل APK اپلیکیشن</string>
+    <string name="export_extract_apk_desc">ذخیره یا اشتراک‌گذاری نسخه نصب‌شده فایل APK این برنامه با اتصال زنده به Gemini و همگام‌سازی ابری.</string>
+    <string name="export_save_apk">ذخیره فایل APK</string>
+    <string name="export_share_apk">اشتراک‌گذاری APK</string>
+    <string name="export_code_preview">پیش‌نمایش زنده کد پروژه</string>
+    <string name="export_history_title">تاریخچه ابری خروجی‌ها</string>
+    <string name="export_history_empty">هنوز خروجی ثبت نشده است.</string>
+    <string name="export_build_guide_title">راهنمای بیلد APK نهایی</string>
+    <string name="export_build_guide_body">بسته ZIP خروجی شامل کد کامل Kotlin/Compose متصل به Firebase AI Logic و اسکریپت build_apk.sh است. همچنین از منوی تنظیمات AI Studio می‌توانید فایل APK امضاشده این برنامه را مستقیماً دریافت کنید.</string>
+
+    <!-- Settings Screen -->
+    <string name="settings_title">تنظیمات و حساب ابری</string>
+    <string name="settings_cloud_card_title">وضعیت اتصال زنده سرویس‌های گوگل</string>
+    <string name="settings_storage_cloud">Cloud Firestore (متصل و همگام‌سازی زنده)</string>
+    <string name="settings_api_gemini">Firebase AI Logic / Gemini API (متصل و آنلاین)</string>
+    <string name="settings_auth_status">ورود امن با حساب گوگل (فعال)</string>
+    <string name="settings_backup_title">پشتیبان‌گیری و بازیابی JSON</string>
+    <string name="settings_backup_export">ذخیره پشتیبان (JSON)</string>
+    <string name="settings_backup_import">بازیابی در ابر</string>
+    <string name="settings_appearance_title">ظاهر Material Design 3</string>
+    <string name="settings_theme_label">پوسته نمایش</string>
+    <string name="settings_dynamic_color">رنگ پویای Material You</string>
+    <string name="settings_dynamic_color_desc">تطبیق رنگ‌ها با پس‌زمینه دستگاه (اندروید ۱۲+)</string>
+    <string name="settings_default_model">مدل پیش‌فرض پروژه‌های جدید</string>
+
+    <!-- Accessibility -->
+    <string name="cd_account_avatar">مدیریت حساب گوگل</string>
+    <string name="cd_project_menu">گزینه‌های پروژه</string>
+    <string name="cd_tuning_button">تنظیمات مدل و پارامترها</string>
+    <string name="cd_attach_image">پیوست تصویر از گالری</string>
+    <string name="cd_remove_image">حذف تصویر پیوست‌شده</string>
+    <string name="cd_send_prompt">ارسال پرامپت به Gemini</string>
+    <string name="cd_stop_generation">توقف تولید پاسخ</string>
+    <string name="cd_copy_code">کپی کد</string>
+</resources>

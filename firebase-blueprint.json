@@ -1,0 +1,109 @@
+{
+  "entities": {
+    "CloudProject": {
+      "title": "CloudProject",
+      "description": "A user-owned AI Studio prompt project synced in Cloud Firestore.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "description": "Owner Firebase Auth UID." },
+        "title": { "type": "string", "description": "Display title of the prompt project." },
+        "description": { "type": "string", "description": "Short project summary." },
+        "category": { "type": "string", "enum": ["CHAT", "STRUCTURED", "VISION", "CODE"] },
+        "modelId": { "type": "string", "enum": ["gemini-3.8-flash", "gemini-4-argon", "gemini-3.5-flash-lite"] },
+        "systemInstruction": { "type": "string", "description": "System prompt instructions for Gemini." },
+        "temperature": { "type": "number", "description": "Sampling temperature from 0.0 to 2.0." },
+        "topP": { "type": "number", "description": "Nucleus sampling threshold from 0.05 to 1.0." },
+        "topK": { "type": "integer", "description": "Top-K sampling integer from 1 to 100." },
+        "maxOutputTokens": { "type": "integer", "description": "Max output tokens from 256 to 8192." },
+        "jsonModeEnabled": { "type": "boolean", "description": "Whether structured JSON response mode is enabled." },
+        "jsonSchema": { "type": "string", "description": "Optional JSON schema definition string." },
+        "safetyBalanced": { "type": "boolean", "description": "Whether Google balanced safety thresholds are enabled." },
+        "pinned": { "type": "boolean", "description": "Whether the project is pinned at the top of the list." },
+        "messageCount": { "type": "integer", "description": "Cached count of messages in the project." },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Server timestamp (FieldValue.serverTimestamp())." },
+        "updatedAt": { "type": "string", "format": "date-time", "description": "Server timestamp (FieldValue.serverTimestamp())." }
+      },
+      "required": [
+        "userId",
+        "title",
+        "description",
+        "category",
+        "modelId",
+        "systemInstruction",
+        "temperature",
+        "topP",
+        "topK",
+        "maxOutputTokens",
+        "jsonModeEnabled",
+        "jsonSchema",
+        "safetyBalanced",
+        "pinned",
+        "messageCount",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "CloudMessage": {
+      "title": "CloudMessage",
+      "description": "A user or Gemini model turn within a user-owned AI Studio project.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "description": "Owner Firebase Auth UID." },
+        "projectId": { "type": "string", "description": "Parent project document ID." },
+        "role": { "type": "string", "enum": ["user", "model"] },
+        "content": { "type": "string", "description": "Message text content." },
+        "modelId": { "type": "string", "description": "Gemini model ID associated with this turn." },
+        "estimatedTokens": { "type": "integer", "description": "Estimated or reported token count." },
+        "hasImageAttachment": { "type": "boolean", "description": "Whether an image was attached to this turn." },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Server timestamp (FieldValue.serverTimestamp())." }
+      },
+      "required": [
+        "userId",
+        "projectId",
+        "role",
+        "content",
+        "modelId",
+        "estimatedTokens",
+        "hasImageAttachment",
+        "createdAt"
+      ]
+    },
+    "CloudExportRecord": {
+      "title": "CloudExportRecord",
+      "description": "Log entry for exported Android Gradle project ZIPs, APK extractions, or workspace backups.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "description": "Owner Firebase Auth UID." },
+        "projectTitle": { "type": "string", "description": "Human-readable exported item title." },
+        "exportType": { "type": "string", "enum": ["ANDROID_PROJECT_ZIP", "INSTALLED_APK", "WORKSPACE_BACKUP"] },
+        "packageName": { "type": "string", "description": "Android package/applicationId." },
+        "fileName": { "type": "string", "description": "Saved or shared file name." },
+        "sizeBytes": { "type": "integer", "description": "Byte size of the exported artifact." },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Server timestamp (FieldValue.serverTimestamp())." }
+      },
+      "required": [
+        "userId",
+        "projectTitle",
+        "exportType",
+        "packageName",
+        "fileName",
+        "sizeBytes",
+        "createdAt"
+      ]
+    }
+  },
+  "firestore": {
+    "/users/{userId}/projects/{projectId}": {
+      "schema": { "$ref": "#/entities/CloudProject" },
+      "description": "User-owned prompt projects synced across devices."
+    },
+    "/users/{userId}/projects/{projectId}/messages/{messageId}": {
+      "schema": { "$ref": "#/entities/CloudMessage" },
+      "description": "Conversation messages belonging to a user-owned prompt project."
+    },
+    "/users/{userId}/exports/{exportId}": {
+      "schema": { "$ref": "#/entities/CloudExportRecord" },
+      "description": "Export history of APK packages, Android ZIP projects, and JSON backups."
+    }
+  }
+}

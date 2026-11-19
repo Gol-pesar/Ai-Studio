@@ -1,0 +1,6 @@
+{
+  "name": "Prompt Studio",
+  "description": "اپلیکیشن بومی اندروید برای مدیریت پرامپت‌ها، مدل‌های رسمی جمینای، همگام‌سازی ابری و خروجی پروژه اندروید",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
